@@ -1,7 +1,7 @@
 import nodeAdapter from '@sveltejs/adapter-node';
-import { fileURLToPath } from 'url';
-import preprocess from 'svelte-preprocess';
 import path from 'path';
+import preprocess from 'svelte-preprocess';
+import { fileURLToPath } from 'url';
 
 // @ts-ignore
 const __filename = fileURLToPath(import.meta.url);
@@ -14,14 +14,7 @@ const config = {
 	}),
 
 	kit: {
-		adapter: nodeAdapter({ out: 'build' }),
-		vite: {
-			resolve: {
-				alias: {
-					'@': path.resolve(__dirname, 'src')
-				}
-			}
-		}
+		adapter: nodeAdapter({ out: 'build' })
 	}
 };
 
